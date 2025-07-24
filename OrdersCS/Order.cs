@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TradingEngineServer.Orders
 {
-    internal class Order : IOrderCore
+    public class Order : IOrderCore
     {
         public Order(IOrderCore orderCore, long price, uint quantity, bool isBuySide)
         {
@@ -16,6 +16,11 @@ namespace TradingEngineServer.Orders
 
             // FIELD
             _orderCore = orderCore;
+        }
+
+        public Order(ModifyOrder modifyOrder) : this(modifyOrder, modifyOrder.Price, modifyOrder.Quantity, modifyOrder.IsBuySide)
+        {
+
         }
 
         public long Price { get; private set; }
