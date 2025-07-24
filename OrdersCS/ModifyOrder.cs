@@ -36,7 +36,6 @@ namespace TradingEngineServer.Orders
             return new Order(this);
         }
 
-
         // FIELDS
         private readonly IOrderCore _orderCore;
     }
